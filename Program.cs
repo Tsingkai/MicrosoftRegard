@@ -6,6 +6,55 @@ namespace MicrosoftRegard
 {
     class Program
     {
+        private static List<string> keyWords = new() {
+            "程序",
+            "变量",
+            "函数",
+            "类",
+            "对象",
+            "接口",
+            "数据库",
+            "服务器",
+            "算法",
+            "循环",
+            "条件语句",
+            "编译器",
+            "虚拟机",
+            "网络",
+            "安全",
+            "云计算",
+            "家庭",
+            "朋友",
+            "食物",
+            "水",
+            "天气",
+            "健康",
+            "工作",
+            "学习",
+            "旅行",
+            "音乐",
+            "电影",
+            "购物",
+            "运动",
+            "时尚",
+            "爱情",
+            "设计",
+            "施工",
+            "工程师",
+            "项目",
+            "计划",
+            "原型",
+            "材料",
+            "结构",
+            "测试",
+            "质量控制",
+            "安全",
+            "监管",
+            "创新",
+            "可持续性",
+            "维护",
+            "自动化"
+        };
         static void Main(string[] args)
         {
             var cvc = EdgeDriverService.CreateDefaultService();
@@ -43,8 +92,7 @@ namespace MicrosoftRegard
                 }
                 for (int i = 0; i < 40; i++)
                 {
-                    drive.Navigate().GoToUrl("https://cn.bing.com/search?q=" + DateTime.Now.Second + " " + DateTime.Now.ToString("yyy-MM-dd HH:mm:ss")+
-                                             "&qs=n&form=QBRE&sp=-1&pq=1231&sc=10-4&sk=&cvid=F55445203C7246E88ACF331B644EE1F7&ghsh=0&ghacc=0&ghpl=");
+                    drive.Navigate().GoToUrl("https://cn.bing.com/search?q=" + keyWords[i % 40] + " " + (i + 1) + "/40                                              &qs=n&form=QBRE&sp=-1&pq=1231&sc=10-4&sk=&cvid=F55445203C7246E88ACF331B644EE1F7&ghsh=0&ghacc=0&ghpl=");
                     Thread.Sleep(2 * 1000);
                     try
                     {
@@ -110,7 +158,7 @@ namespace MicrosoftRegard
                 Thread.Sleep(2 * 1000);
                 for (int i = 0; i < 30; i++)
                 {
-                    driver.Navigate().GoToUrl("https://cn.bing.com/search?q=" + DateTime.Now.Second + " "+ DateTime.Now.ToString("yyy-MM-dd HH:mm:ss")+"&qs=n&form=QBRE&sp=-1&pq=1231&sc=10-4&sk=&cvid=F55445203C7246E88ACF331B644EE1F7&ghsh=0&ghacc=0&ghpl=");
+                    driver.Navigate().GoToUrl("https://cn.bing.com/search?q=" + keyWords[keyWords.Count - i - 1] + " " + (i + 1) + "/30 &qs=n&form=QBRE&sp=-1&pq=1231&sc=10-4&sk=&cvid=F55445203C7246E88ACF331B644EE1F7&ghsh=0&ghacc=0&ghpl=");
                     Thread.Sleep(2 * 1000);
                 }
             }
